@@ -25,6 +25,9 @@ The server will start running at `http://localhost:3000`.
 
 ## API Endpoints
 
-| Method | Endpoint | Description                 |
-| :--- | :--- |:----------------------------|
-| `GET` | `/api/health` | Verify the service is alive |
+| Method | Endpoint           | Description                 |
+|:-------|:-------------------|:----------------------------|
+| `GET`  | `/api/health`      | Verify the service is alive |
+| `GET`  | `/api/products`    | Get all products            |
+| `GET`  | `/api/products:id` | Get product by ID           |
+| `POST` | `/api/products`    | Create a product            |
