@@ -1,33 +1,8 @@
-# BrewCrew API
+# The project: BrewCrew
 
-## Getting Started
-
-Follow these steps to set up and run the project locally.
-
-### 1. Install dependencies
-```bash
-npm install
-```
-
-### 2. Run the application
-
-**Development Mode (with auto-reload):**
-```bash
-npm run dev
-```
-
-**Production Mode:**
-```bash
-npm start
-```
-
-The server will start running at `http://localhost:3000`.
-
-## API Endpoints
-
-| Method | Endpoint           | Description                 |
-|:-------|:-------------------|:----------------------------|
-| `GET`  | `/api/health`      | Verify the service is alive |
-| `GET`  | `/api/products`    | Get all products            |
-| `GET`  | `/api/products:id` | Get product by ID           |
-| `POST` | `/api/products`    | Create a product            |
+BrewCrew is an internal-facing web app for a chain of coffee shops.
+It lets shop managers track inventory, place supply orders, and view simple sales dashboards.
+The stack:
+* Frontend: React (Vite), React Router, plain CSS modules for now — no UI framework yet
+* Backend: Node.js + Express REST API
+* Database: PostgreSQL
