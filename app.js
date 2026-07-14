@@ -16,9 +16,7 @@ app.get('/api/health', (req, res) => {
 app.use('/api/products', products);
 
 app.use((req, res) => {
-    res.status(404).json({
-        error: 'Not found'
-    });
+    res.status(404).json({ error: 'Not found' });
 });
 
 module.exports = app;
