@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 const products = require('./routes/products');
+const cors = require('cors');
+
+// Adds headers: Access-Control-Allow-Origin: *
+app.use(cors());
 
 // IMPORTANT: Middleware to parse JSON payloads in request bodies
 app.use(express.json());

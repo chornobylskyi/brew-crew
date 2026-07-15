@@ -1,9 +1,6 @@
 export default function ProductList ({ products }) {
-    if (!products || !products.length) {
-        return (
-            <h2>No products</h2>
-        );
-    }
+    if (!products || !products.length) return <p>No products</p>;
+
     const listItems = products.map(product =>
         <li key={product.id}>
             <h3>{product.name}</h3>
