@@ -14,7 +14,7 @@ function App() {
     const controller = new AbortController();
     const fetchItems = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/products', {
+        const response = await fetch('/api/products', {
           signal: controller.signal
         });
 
