@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import './App.css'
 import ProductList from './ProductList'
+import ProductAddForm from './ProductAddForm';
 
 function App() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const handleAddProduct = (newProduct) => setProducts(prev => [...prev, newProduct]);
 
   useEffect(() => {
     // AbortController cancels the fetch if the component unmounts
@@ -36,10 +38,13 @@ function App() {
     return () => controller.abort();
   }, []);
 
-  if (loading) return <p>Loading…</p>;
-  if (error) return <p>Error: {error}</p>;
-
-  return <ProductList products={products} />;
+  return (
+      <>
+        <h2>Products</h2>
+        {loading ? (<p>Loading…</p>) : error ? (<p>Error: {error}</p>) : (<ProductList products={products} />)}
+        <ProductAddForm onAddProduct={handleAddProduct} />
+      </>
+  )
 }
 
 export default App
